@@ -1,11 +1,13 @@
 package chapter4;
 
+import java.util.LinkedList;
+
 public class AdjacencyList {
     private LinkedList<Integer>[] list;
     private boolean directed;
 
     public AdjacencyList(int maxV, boolean directed) {
-        list = new LinkedList<>()[maxV];
+        list = new LinkedList[maxV];
         this.directed = directed;
 
         for(LinkedList<Integer> item : list) {
