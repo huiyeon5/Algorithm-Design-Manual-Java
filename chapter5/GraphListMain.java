@@ -16,5 +16,8 @@ public class GraphListMain {
 
         System.out.println("\n*** DFS ***");
         graph.depthFirst(2);
+
+        System.out.println("\n\n*** Connected Components ***");
+        graph.connectedComponents();
     }
 }

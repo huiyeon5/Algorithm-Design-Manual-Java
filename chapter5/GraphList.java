@@ -58,4 +58,17 @@ public class GraphList {
             }
         }
     }
+
+    public void connectedComponents() {
+        int comp = 0;
+        boolean[] visited = new boolean[graph.length];
+        for(int i = 0; i < graph.length; i++) {
+            if(!visited[i]) {
+                comp++;
+                System.out.print("Component " + comp +": ");
+                DFSUtil(i, visited);
+                System.out.println();
+            }
+        }
+    }
 }
