@@ -18,7 +18,7 @@ public class GraphList {
         // graph[dest].add(src) IF IT IS UNDIRECTED
     }
 
-    public void breadFirst(int start) {
+    public void breadthFirst(int start) {
         boolean[] visited = new boolean[graph.length];
 
         LinkedList<Integer> queue = new LinkedList<>();
@@ -27,17 +27,16 @@ public class GraphList {
         queue.add(start);
 
         while(!queue.isEmpty()) {
-            int val = queue.removeFirst();
-            System.out.print(val + ' ');
+            int val = queue.poll();
+            System.out.print(val + " ");
 
             ListIterator<Integer> iter = graph[val].listIterator();
             while(iter.hasNext()) {
                 int n = iter.next();
                 if(!visited[n]) {
+                    visited[n] = true;
                     queue.add(n);
                 }
-
-                visited[n] = true;
             }
         }
     }
@@ -55,7 +54,7 @@ public class GraphList {
         while(iter.hasNext()) {
             int n = iter.next();
             if(!visited[n]) {
-                DFSUtil(val, visited);
+                DFSUtil(n, visited);
             }
         }
     }
