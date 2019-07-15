@@ -1,3 +1,5 @@
+package chapter6;
+
 public class Kruskals {
     class Edge implements Comparable<Edge> {
         int src, dest, weight;
