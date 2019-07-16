@@ -16,7 +16,7 @@ public class Dijkstras {
 
         for(int i = 0; i < verts; i++) {
             dist[i] = MAX;
-            found = false;
+            found[i] = false;
             
             for(int j = 0; j < verts; j++) {
                 this.adj[i][j] = adj[i][j];
@@ -35,7 +35,7 @@ public class Dijkstras {
             for(int j = 0; j < verts; j++) {
                 if(adj[u][j] != 0 && dist[j] > dist[u] + adj[u][j]) {
                     dist[j] = dist[u] + adj[u][j];
-                    parent[j] = u;
+                    parents[j] = u;
                 }
             }
         }

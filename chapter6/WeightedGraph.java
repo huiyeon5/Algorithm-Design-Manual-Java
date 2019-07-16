@@ -35,7 +35,7 @@ public class WeightedGraph {
 
         public void printGraph(){
             for (int i = 0; i <vertices ; i++) {
-                LinkedList<Edge> list = adjacencylist[i];
+                LinkedList<Edge> list = adjacencyList[i];
                 for (int j = 0; j <list.size() ; j++) {
                     System.out.println("vertex-" + i + " is connected to " +
                             list.get(j).destination + " with weight " +  list.get(j).weight);

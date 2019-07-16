@@ -1,5 +1,7 @@
 package chapter6;
 
+import java.util.*;
+
 public class Kruskals {
     class Edge implements Comparable<Edge> {
         int src, dest, weight;
@@ -43,8 +45,8 @@ public class Kruskals {
         } else if(subsets[xRoot].rank > subsets[yRoot].rank) {
             subsets[yRoot].parent = xRoot;
         } else {
-            subsets[yroot].parent = xroot; 
-            subsets[xroot].rank++; 
+            subsets[yRoot].parent = xRoot; 
+            subsets[xRoot].rank++; 
         }
     }
 
@@ -60,7 +62,7 @@ public class Kruskals {
 
         Subset[] subsets = new Subset[V];
         for(i = 0; i < V; i++) {
-            subset[i] = new Subset();
+            subsets[i] = new Subset();
         }
 
         for (int v = 0; v < V; ++v) { 

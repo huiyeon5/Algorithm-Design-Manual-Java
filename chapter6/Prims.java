@@ -22,7 +22,7 @@ public class Prims {
             found[i] = false;
 
             for(int j = 0; j < n; j++) {
-                adj[i][j] = a[i][j];
+                this.adj[i][j] = adj[i][j];
             }
         }
     }
@@ -35,7 +35,7 @@ public class Prims {
             for(int j = 0; j < verts; j++) {
                 if(adj[u][j] != 0 && !found[j] && adj[u][j] < key[j]) {
                     key[j] = adj[u][j];
-                    parent[j] = u;
+                    parents[j] = u;
                 }
             }
         }
@@ -57,8 +57,8 @@ public class Prims {
     void print(){
         int total = 0;
         for(int i = 0;i < verts;++i){
-            System.out.println(i+" - "+parent[i]);
-            total += adj[i][parent[i]];
+            System.out.println(i+" - "+parents[i]);
+            total += adj[i][parents[i]];
         }
         System.out.println("The total cost is : "+total);
     }
